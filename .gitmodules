@@ -1,0 +1,3 @@
+[submodule "futura"]
+	path = futura
+	url = git@github.com:miquido/futura.git
