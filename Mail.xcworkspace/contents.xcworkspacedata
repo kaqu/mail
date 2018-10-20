@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:futura-master/Futura/Futura.xcodeproj">
+      location = "group:futura/Futura/Futura.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Mail.playground">

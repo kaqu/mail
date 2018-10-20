@@ -12,6 +12,7 @@
 		40845EAB217A27E400C5956A /* MailFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 40845E9D217A27E400C5956A /* MailFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40845EB5217A280200C5956A /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40845EB4217A280200C5956A /* Mailbox.swift */; };
 		40845EB7217A330200C5956A /* MailboxConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40845EB6217A330200C5956A /* MailboxConnection.swift */; };
+		408E6F02217BAF100061E4E4 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408E6F01217BAF100061E4E4 /* Futura.framework */; };
 		40DF151D217B8364007C1423 /* MailMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151C217B8364007C1423 /* MailMessage.swift */; };
 		40DF151F217B98B0007C1423 /* MailCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151E217B98B0007C1423 /* MailCommands.swift */; };
 		40DF1521217BA1FE007C1423 /* MailConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF1520217BA1FE007C1423 /* MailConnection.swift */; };
@@ -36,6 +37,7 @@
 		40845EAA217A27E400C5956A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40845EB4217A280200C5956A /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
 		40845EB6217A330200C5956A /* MailboxConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxConnection.swift; sourceTree = "<group>"; };
+		408E6F01217BAF100061E4E4 /* Futura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DF151C217B8364007C1423 /* MailMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailMessage.swift; sourceTree = "<group>"; };
 		40DF151E217B98B0007C1423 /* MailCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCommands.swift; sourceTree = "<group>"; };
 		40DF1520217BA1FE007C1423 /* MailConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailConnection.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408E6F02217BAF100061E4E4 /* Futura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 				40845E9C217A27E400C5956A /* MailFoundation */,
 				40845EA7217A27E400C5956A /* MailFoundationTests */,
 				40845E9B217A27E400C5956A /* Products */,
+				408E6F00217BAF100061E4E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +103,14 @@
 				40845EAA217A27E400C5956A /* Info.plist */,
 			);
 			path = MailFoundationTests;
+			sourceTree = "<group>";
+		};
+		408E6F00217BAF100061E4E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				408E6F01217BAF100061E4E4 /* Futura.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
