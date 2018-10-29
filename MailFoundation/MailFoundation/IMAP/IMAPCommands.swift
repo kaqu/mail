@@ -1,37 +1,16 @@
 //
-//  MailCommand.swift
+//  IMAPCommands.swift
 //  MailFoundation
 //
-//  Created by Kacper Kaliński on 20/10/2018.
+//  Created by Kacper Kaliński on 27/10/2018.
 //  Copyright © 2018 Kaqu. All rights reserved.
 //
 
-internal protocol MailCommand {
-    var commandString: String { get }
-}
+import Foundation
 
-internal struct MailCommandTag : Hashable {
-    
-    private let prefix: String
-    private var number: UInt
-    
-    internal init(prefix: String, number: UInt = 0) {
-        self.prefix = prefix
-        self.number = number
-    }
-    
-    internal mutating func getAndIterate() -> MailCommandTag {
-        let current = number
-        number += 1
-        return MailCommandTag.init(prefix: prefix, number: current)
-    }
-    
-    internal var commandString: String {
-        return "\(prefix)\(number)"
-    }
-}
+internal protocol IMAPCommand : ConnectionCommand {}
 
-public enum MailConnectionCommand {
+public enum IMAPMailCommand {
     // info
     case capability
     
@@ -44,7 +23,7 @@ public enum MailConnectionCommand {
     case noop
 }
 
-extension MailConnectionCommand : MailCommand {
+extension IMAPMailCommand : IMAPCommand, ConnectionCommand {
     
     internal var commandString: String {
         switch self {
@@ -62,7 +41,7 @@ extension MailConnectionCommand : MailCommand {
     }
 }
 
-public enum MailBoxCommand {
+public enum IMAPMailBoxCommand {
     // mailbox manipulation
     case select(mailbox: String) // read-write
     case examine(mailbox: String) // read only
@@ -82,10 +61,10 @@ public enum MailBoxCommand {
     case status(mailbox: String, [StatusItem])
     
     // cleanup
-    case expunge
+    case expunge 
 }
 
-extension MailBoxCommand : MailCommand {
+extension IMAPMailBoxCommand : IMAPCommand, ConnectionCommand {
     
     internal var commandString: String {
         switch self {
@@ -115,7 +94,7 @@ extension MailBoxCommand : MailCommand {
     }
 }
 
-extension MailBoxCommand {
+extension IMAPMailBoxCommand {
     
     public enum StatusItem : String {
         case messages = "MESSAGES"
@@ -126,12 +105,12 @@ extension MailBoxCommand {
     }
 }
 
-public enum MailMessageCommand {
+public enum IMAPMailMessageCommand {
     case search([SearchCriteria])
     case fetch(Message.UID, items: [MessageItem])
 }
 
-extension MailMessageCommand : MailCommand {
+extension IMAPMailMessageCommand : IMAPCommand, ConnectionCommand {
     
     internal var commandString: String {
         switch self {
@@ -143,7 +122,7 @@ extension MailMessageCommand : MailCommand {
     }
 }
 
-extension MailMessageCommand {
+extension IMAPMailMessageCommand {
     public enum SearchCriteria { // TODO: ...
         case answered
         case bcc(String)
@@ -159,7 +138,7 @@ extension MailMessageCommand {
     }
 }
 
-extension MailMessageCommand.MessageItem {
+extension IMAPMailMessageCommand.MessageItem {
     
     internal var commandString: String {
         switch self {
@@ -184,7 +163,7 @@ extension MailMessageCommand.MessageItem {
     }
 }
 
-extension MailMessageCommand.MessageItem.BodyItem {
+extension IMAPMailMessageCommand.MessageItem.BodyItem {
     
     internal var commandString: String {
         switch self {
@@ -200,7 +179,7 @@ extension MailMessageCommand.MessageItem.BodyItem {
     }
 }
 
-extension MailMessageCommand.SearchCriteria {
+extension IMAPMailMessageCommand.SearchCriteria {
     internal var commandString: String {
         switch self {
         case .answered:

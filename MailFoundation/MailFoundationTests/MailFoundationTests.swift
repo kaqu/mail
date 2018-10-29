@@ -16,42 +16,50 @@ class MailFoundationTests: XCTestCase {
         let lock = NSLock.init()
         lock.lock()
         DispatchQueue.global().async {
-            let conn = MailConnection.init(host: "imap.mail.me.com")
-            conn.eventsStream
-                .next { (data) in
-                    let str = String.init(data: data, encoding: .utf8) ?? "???"
-                    print(str)
-                    guard let message = Message.make(from: str) else { return }
-                    print(message)
+            let conn = IMAPConnection.init(host: "imap.wp.pl") {
+                switch $0 {
+                case let .message(data):
+                    let stringData: String = String.init(data: data, encoding: .utf8) ?? "???"
+                    print(stringData)
+                case let .error(error):
+                    print("ERROR: \(error)")
+                case _: break
+                }
+                
             }
-            sleep(2)
-            conn.send(mailCommand: .loginPlain(user: "kaqukal@icloud.com", password: "dnfr-nmtw-quxe-rhfy"))
-            sleep(2)
-            conn.send(mailCommand: .noop)
-            sleep(2)
-            conn.send(mailCommand: .capability)
-            sleep(2)
-            conn.send(mailBoxCommand: .select(mailbox: "INBOX"))
-            sleep(2)
-            conn.send(mailCommand: .capability)
-            sleep(2)
-            conn.send(mailBoxCommand: .list(reference: "", mailbox: ""))
-            sleep(2)
-            conn.send(mailBoxCommand: .status(mailbox: "INBOX", []))
-            sleep(2)
-            conn.send(mailBoxCommand: .status(mailbox: "INBOX", [MailBoxCommand.StatusItem.messages]))
-            sleep(2)
-            conn.send(mailMessageCommand: .search([MailMessageCommand.SearchCriteria.answered]))
-            sleep(2)
-            conn.send(mailMessageCommand: .fetch("410", items: [MailMessageCommand.MessageItem.envelope, MailMessageCommand.MessageItem.flags]))
-            sleep(2)
-            conn.send(mailBoxCommand: .select(mailbox: "Sent Messages"))
-            sleep(2)
-            conn.send(mailMessageCommand: .fetch("411", items: [.body([])]))
-            sleep(2)
-            conn.send(mailBoxCommand: .select(mailbox: "INBOX"))
-            sleep(2)
-            conn.send(mailMessageCommand: .fetch("412", items: [MailMessageCommand.MessageItem.body([])]))
+            conn.connectIfNeeded()
+            
+            conn.send(IMAPMailBoxCommand.select(mailbox: "INBOX"))
+            conn.send(IMAPMailBoxCommand.status(mailbox: "INBOX", []))
+            conn.send(IMAPMailMessageCommand.fetch("1", items: [.body([])]))
+            conn.send(IMAPMailCommand.logout)
+            
+//            sleep(2)
+//            conn.send(mailCommand: .noop)
+//            sleep(2)
+//            conn.send(mailCommand: .capability)
+//            sleep(2)
+//            conn.send(mailBoxCommand: .select(mailbox: "INBOX"))
+//            sleep(2)
+//            conn.send(mailCommand: .capability)
+//            sleep(2)
+//            conn.send(mailBoxCommand: .list(reference: "", mailbox: ""))
+//            sleep(2)
+//            conn.send(mailBoxCommand: .status(mailbox: "INBOX", []))
+//            sleep(2)
+//            conn.send(mailBoxCommand: .status(mailbox: "INBOX", [MailBoxCommand.StatusItem.messages]))
+//            sleep(2)
+//            conn.send(mailMessageCommand: .search([MailMessageCommand.SearchCriteria.answered]))
+//            sleep(2)
+//            conn.send(mailMessageCommand: .fetch("410", items: [MailMessageCommand.MessageItem.envelope, MailMessageCommand.MessageItem.flags]))
+//            sleep(2)
+//            conn.send(mailBoxCommand: .select(mailbox: "Sent Messages"))
+//            sleep(2)
+//            conn.send(mailMessageCommand: .fetch("411", items: [.body([])]))
+//            sleep(2)
+//            conn.send(mailBoxCommand: .select(mailbox: "INBOX"))
+//            sleep(2)
+//            conn.send(mailMessageCommand: .fetch("412", items: [MailMessageCommand.MessageItem.body([])]))
             
 //            conn.setup { }
 //            sleep(2)
@@ -83,8 +91,8 @@ class MailFoundationTests: XCTestCase {
 //            sleep(2)
 //            conn.send(command: .noop)
             sleep(60)
-            conn.send(mailCommand: .logout)
-            sleep(2)
+//            conn.send(mailCommand: .logout)
+//            sleep(2)
             lock.unlock()
         }
         lock.lock()

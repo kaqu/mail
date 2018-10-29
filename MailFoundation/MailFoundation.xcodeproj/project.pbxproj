@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405DDF3B2184DA8700CBA99D /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF3A2184DA8700CBA99D /* Connection.swift */; };
+		405DDF3D2184DA9B00CBA99D /* IMAPCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF3C2184DA9B00CBA99D /* IMAPCommands.swift */; };
+		405DDF3F2184E15700CBA99D /* IMAPMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF3E2184E15700CBA99D /* IMAPMessages.swift */; };
+		405DDF412184E85600CBA99D /* Mail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF402184E85600CBA99D /* Mail.swift */; };
+		405DDF432186FB2F00CBA99D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF422186FB2F00CBA99D /* Database.swift */; };
+		405DDF4A2186FE9B00CBA99D /* DatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF492186FE9B00CBA99D /* DatabaseConfig.swift */; };
+		405DDF4C2187007600CBA99D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF4B2187007600CBA99D /* DataModel.swift */; };
+		405DDF4E218700D700CBA99D /* DataModelGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF4D218700D700CBA99D /* DataModelGraph.swift */; };
+		405DDF5021877A2F00CBA99D /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF4F21877A2F00CBA99D /* DataObject.swift */; };
+		405DDF522187985F00CBA99D /* AttributeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF512187985F00CBA99D /* AttributeDescription.swift */; };
+		405DDF5421879D2A00CBA99D /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405DDF5321879D2A00CBA99D /* Mailbox.swift */; };
 		40845EA4217A27E400C5956A /* MailFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40845E9A217A27E400C5956A /* MailFoundation.framework */; };
 		40845EA9217A27E400C5956A /* MailFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40845EA8217A27E400C5956A /* MailFoundationTests.swift */; };
 		40845EAB217A27E400C5956A /* MailFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 40845E9D217A27E400C5956A /* MailFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40845EB5217A280200C5956A /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40845EB4217A280200C5956A /* Mailbox.swift */; };
-		40845EB7217A330200C5956A /* MailboxConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40845EB6217A330200C5956A /* MailboxConnection.swift */; };
 		408E6F02217BAF100061E4E4 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408E6F01217BAF100061E4E4 /* Futura.framework */; };
-		40DF151D217B8364007C1423 /* MailMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151C217B8364007C1423 /* MailMessage.swift */; };
-		40DF151F217B98B0007C1423 /* MailCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151E217B98B0007C1423 /* MailCommands.swift */; };
-		40DF1521217BA1FE007C1423 /* MailConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF1520217BA1FE007C1423 /* MailConnection.swift */; };
+		40DF151D217B8364007C1423 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151C217B8364007C1423 /* Message.swift */; };
+		40DF151F217B98B0007C1423 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF151E217B98B0007C1423 /* Commands.swift */; };
+		40DF1521217BA1FE007C1423 /* IMAPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF1520217BA1FE007C1423 /* IMAPConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +38,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		405DDF3A2184DA8700CBA99D /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		405DDF3C2184DA9B00CBA99D /* IMAPCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMAPCommands.swift; sourceTree = "<group>"; };
+		405DDF3E2184E15700CBA99D /* IMAPMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMAPMessages.swift; sourceTree = "<group>"; };
+		405DDF402184E85600CBA99D /* Mail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mail.swift; sourceTree = "<group>"; };
+		405DDF422186FB2F00CBA99D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		405DDF492186FE9B00CBA99D /* DatabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConfig.swift; sourceTree = "<group>"; };
+		405DDF4B2187007600CBA99D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		405DDF4D218700D700CBA99D /* DataModelGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelGraph.swift; sourceTree = "<group>"; };
+		405DDF4F21877A2F00CBA99D /* DataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
+		405DDF512187985F00CBA99D /* AttributeDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeDescription.swift; sourceTree = "<group>"; };
+		405DDF5321879D2A00CBA99D /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
 		40845E9A217A27E400C5956A /* MailFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40845E9D217A27E400C5956A /* MailFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailFoundation.h; sourceTree = "<group>"; };
 		40845E9E217A27E400C5956A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40845EA3217A27E400C5956A /* MailFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40845EA8217A27E400C5956A /* MailFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailFoundationTests.swift; sourceTree = "<group>"; };
 		40845EAA217A27E400C5956A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40845EB4217A280200C5956A /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
-		40845EB6217A330200C5956A /* MailboxConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxConnection.swift; sourceTree = "<group>"; };
 		408E6F01217BAF100061E4E4 /* Futura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40DF151C217B8364007C1423 /* MailMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailMessage.swift; sourceTree = "<group>"; };
-		40DF151E217B98B0007C1423 /* MailCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCommands.swift; sourceTree = "<group>"; };
-		40DF1520217BA1FE007C1423 /* MailConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailConnection.swift; sourceTree = "<group>"; };
+		40DF151C217B8364007C1423 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		40DF151E217B98B0007C1423 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		40DF1520217BA1FE007C1423 /* IMAPConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMAPConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		405DDF442186FDB300CBA99D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				405DDF422186FB2F00CBA99D /* Database.swift */,
+				405DDF492186FE9B00CBA99D /* DatabaseConfig.swift */,
+				405DDF4B2187007600CBA99D /* DataModel.swift */,
+				405DDF4D218700D700CBA99D /* DataModelGraph.swift */,
+				405DDF4F21877A2F00CBA99D /* DataObject.swift */,
+				405DDF512187985F00CBA99D /* AttributeDescription.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		405DDF452186FDBA00CBA99D /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				405DDF3A2184DA8700CBA99D /* Connection.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		405DDF462186FDDD00CBA99D /* IMAP */ = {
+			isa = PBXGroup;
+			children = (
+				40DF1520217BA1FE007C1423 /* IMAPConnection.swift */,
+				405DDF3C2184DA9B00CBA99D /* IMAPCommands.swift */,
+				405DDF3E2184E15700CBA99D /* IMAPMessages.swift */,
+			);
+			path = IMAP;
+			sourceTree = "<group>";
+		};
+		405DDF472186FDE900CBA99D /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				40DF151E217B98B0007C1423 /* Commands.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		405DDF482186FE0D00CBA99D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40DF151C217B8364007C1423 /* Message.swift */,
+				405DDF5321879D2A00CBA99D /* Mailbox.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		40845E90217A27E400C5956A = {
 			isa = PBXGroup;
 			children = (
@@ -85,13 +151,14 @@
 		40845E9C217A27E400C5956A /* MailFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				405DDF462186FDDD00CBA99D /* IMAP */,
+				405DDF472186FDE900CBA99D /* Commands */,
+				405DDF452186FDBA00CBA99D /* Connection */,
+				405DDF482186FE0D00CBA99D /* Model */,
+				405DDF442186FDB300CBA99D /* Database */,
 				40845E9D217A27E400C5956A /* MailFoundation.h */,
 				40845E9E217A27E400C5956A /* Info.plist */,
-				40845EB4217A280200C5956A /* Mailbox.swift */,
-				40845EB6217A330200C5956A /* MailboxConnection.swift */,
-				40DF151C217B8364007C1423 /* MailMessage.swift */,
-				40DF151E217B98B0007C1423 /* MailCommands.swift */,
-				40DF1520217BA1FE007C1423 /* MailConnection.swift */,
+				405DDF402184E85600CBA99D /* Mail.swift */,
 			);
 			path = MailFoundation;
 			sourceTree = "<group>";
@@ -222,11 +289,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DF1521217BA1FE007C1423 /* MailConnection.swift in Sources */,
-				40DF151D217B8364007C1423 /* MailMessage.swift in Sources */,
-				40845EB7217A330200C5956A /* MailboxConnection.swift in Sources */,
-				40DF151F217B98B0007C1423 /* MailCommands.swift in Sources */,
-				40845EB5217A280200C5956A /* Mailbox.swift in Sources */,
+				405DDF412184E85600CBA99D /* Mail.swift in Sources */,
+				405DDF5421879D2A00CBA99D /* Mailbox.swift in Sources */,
+				40DF1521217BA1FE007C1423 /* IMAPConnection.swift in Sources */,
+				405DDF3B2184DA8700CBA99D /* Connection.swift in Sources */,
+				405DDF5021877A2F00CBA99D /* DataObject.swift in Sources */,
+				40DF151D217B8364007C1423 /* Message.swift in Sources */,
+				405DDF3F2184E15700CBA99D /* IMAPMessages.swift in Sources */,
+				405DDF3D2184DA9B00CBA99D /* IMAPCommands.swift in Sources */,
+				405DDF4C2187007600CBA99D /* DataModel.swift in Sources */,
+				405DDF4E218700D700CBA99D /* DataModelGraph.swift in Sources */,
+				40DF151F217B98B0007C1423 /* Commands.swift in Sources */,
+				405DDF4A2186FE9B00CBA99D /* DatabaseConfig.swift in Sources */,
+				405DDF432186FB2F00CBA99D /* Database.swift in Sources */,
+				405DDF522187985F00CBA99D /* AttributeDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
