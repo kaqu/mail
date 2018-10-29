@@ -28,7 +28,7 @@ class MailFoundationTests: XCTestCase {
                 
             }
             conn.connectIfNeeded()
-            
+
             conn.send(IMAPMailBoxCommand.select(mailbox: "INBOX"))
             conn.send(IMAPMailBoxCommand.status(mailbox: "INBOX", []))
             conn.send(IMAPMailMessageCommand.fetch("1", items: [.body([])]))
@@ -65,7 +65,7 @@ class MailFoundationTests: XCTestCase {
 //            sleep(2)
 //            conn.send(command: .noop)
 //            sleep(2)
-//            conn.send(command: .login(user: "kaqukal@icloud.com", password: "dnfr-nmtw-quxe-rhfy"))
+
 //            sleep(2)
 //            conn.send(command: .select(mailbox: "INBOX"))
 //            sleep(2)
